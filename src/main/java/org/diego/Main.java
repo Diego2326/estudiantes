@@ -1,17 +1,26 @@
 package org.diego;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.diego.back.Arreglo;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Arreglo arreglo = new Arreglo();
+        arreglo.addEstudiante("Diego", 95.5);
+        arreglo.addEstudiante("María", 88.7);
+        arreglo.addEstudiante("Carlos", 72.3);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println("Lista de Estudiantes:");
+        System.out.println(arreglo.getEstudiantes());
+
+        System.out.println("Nota promedio: " + arreglo.calcularPromedio());
+        System.out.println("Nota más alta: " + arreglo.getNotaMasAlta());
+        System.out.println("Nota más baja: " + arreglo.getNotaMasBaja());
+
+        arreglo.ordenarPorNota();
+        System.out.println("\nEstudiantes ordenados por nota (Mayor a Menor):");
+        System.out.println(arreglo.getEstudiantes());
+
+        System.out.println("\nBuscar estudiante 'María':");
+        System.out.println(arreglo.buscarEstudiante("María"));
     }
 }
